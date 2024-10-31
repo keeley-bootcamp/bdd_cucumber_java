@@ -33,6 +33,13 @@ public class CalculatorStepDefinitions {
         calculator.push("*");
     }
 
+    @When("I divide {int} by {int}")
+    public void i_divide_by(Integer int1, Integer int2) {
+        calculator.push(int1);
+        calculator.push(int2);
+        calculator.push("/");
+    }
+
     @Then("the result is {double}")
     public void the_result_is(double expected) {
         Number value = calculator.value();

@@ -15,6 +15,10 @@ Feature: Basic Arithmetic
     When I multiply 3 and 4
     Then the result is 12
 
+  Scenario: Division
+    When I divide 10 by 2
+    Then the result is 5
+
   Scenario Outline: Several additions
     When I add <a> and <b>
     Then the result is <c>

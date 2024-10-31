@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Calculator {
     private final Deque<Number> stack = new LinkedList<>();
-    private static final List<String> OPERATORS = List.of("+", "-", "*");
+    private static final List<String> OPERATORS = List.of("+", "-", "*", "/");
 
     public void push(Object arg) {
         if (OPERATORS.contains(arg)) {
@@ -20,6 +20,9 @@ public class Calculator {
             }
             else if (arg.equals("*")) {
                 answer = x.doubleValue() * y.doubleValue();
+            }
+            else if (arg.equals("/")) {
+                answer = x.doubleValue() / y.doubleValue();
             }
             stack.add(answer);
         }

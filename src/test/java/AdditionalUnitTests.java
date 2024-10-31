@@ -122,4 +122,21 @@ public class AdditionalUnitTests {
         // assert
         assertEquals(expectedAnswer, actualAnswer);
     }
+
+    @Test
+    public void divide_operator_results_in_division() {
+        // arrange
+        int a = 20, b = 5;
+        Number expectedAnswer = 4.0;
+        Calculator calculator = new Calculator();
+
+        // act
+        calculator.push(a);
+        calculator.push(b);
+        calculator.push("/");
+        Number actualAnswer = calculator.value();
+
+        // assert
+        assertEquals(expectedAnswer, actualAnswer);
+    }
 }
