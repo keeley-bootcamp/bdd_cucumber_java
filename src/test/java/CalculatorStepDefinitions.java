@@ -19,16 +19,23 @@ public class CalculatorStepDefinitions {
         calculator.push("+");
     }
 
-    @Then("the result is {double}")
-    public void the_result_is(double expected) {
-        Number value = calculator.value();
-        assertEquals(expected, value);
-    }
-
     @When("I subtract {int} from {int}")
     public void i_subtract_from(Integer int1, Integer int2) {
         calculator.push(int1);
         calculator.push(int2);
         calculator.push("-");
+    }
+
+    @When("I multiply {int} and {int}")
+    public void i_multiply_and(Integer int1, Integer int2) {
+        calculator.push(int1);
+        calculator.push(int2);
+        calculator.push("*");
+    }
+
+    @Then("the result is {double}")
+    public void the_result_is(double expected) {
+        Number value = calculator.value();
+        assertEquals(expected, value);
     }
 }

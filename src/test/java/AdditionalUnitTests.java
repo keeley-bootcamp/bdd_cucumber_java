@@ -105,4 +105,21 @@ public class AdditionalUnitTests {
         // assert
         assertEquals(expectedAnswer, actualAnswer);
     }
+
+    @Test
+    public void multiply_operator_results_in_multiplication() {
+        // arrange
+        int a = 5, b = 5;
+        Number expectedAnswer = 25.0;
+        Calculator calculator = new Calculator();
+
+        // act
+        calculator.push(a);
+        calculator.push(b);
+        calculator.push("*");
+        Number actualAnswer = calculator.value();
+
+        // assert
+        assertEquals(expectedAnswer, actualAnswer);
+    }
 }

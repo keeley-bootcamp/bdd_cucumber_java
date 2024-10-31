@@ -11,6 +11,10 @@ Feature: Basic Arithmetic
     When I subtract 2 from 7
     Then the result is 5
 
+  Scenario: Multiplication
+    When I multiply 3 and 4
+    Then the result is 12
+
   Scenario Outline: Several additions
     When I add <a> and <b>
     Then the result is <c>

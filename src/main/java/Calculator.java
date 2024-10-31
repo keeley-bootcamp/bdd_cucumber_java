@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Calculator {
     private final Deque<Number> stack = new LinkedList<>();
-    private static final List<String> OPERATORS = List.of("+", "-");
+    private static final List<String> OPERATORS = List.of("+", "-", "*");
 
     public void push(Object arg) {
         if (OPERATORS.contains(arg)) {
@@ -14,17 +14,21 @@ public class Calculator {
 
             if (arg.equals("+")) {
                 answer = x.doubleValue() + y.doubleValue();
-            } else if (arg.equals("-")) {
+            }
+            else if (arg.equals("-")) {
                 answer = y.doubleValue() - x.doubleValue();
             }
-
+            else if (arg.equals("*")) {
+                answer = x.doubleValue() * y.doubleValue();
+            }
             stack.add(answer);
-        } else {
+        }
+        else {
             try {
                 double num = Double.parseDouble(arg.toString());
                 stack.add(num);
-            } catch (Exception e) {
-                // If parsing fails, it should not default to "+"
+            }
+            catch (Exception e) {
                 throw new IllegalArgumentException("Invalid input: " + arg);
             }
         }
